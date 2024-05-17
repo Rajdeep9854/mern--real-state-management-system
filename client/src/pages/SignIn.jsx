@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signInSuccess,signInFailure,signInStart } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
 
-const SignUp = () => {
+const SignIn = () => {
   const [formData, setFormData] = useState({});
   const {loading , error} = useSelector(state=>state.user)
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const SignUp = () => {
       dispatch(signInStart());
       //console.log(formData);
     const res = await fetch("api/v1/auth/signin", {
-      method: 'post',
+      method: 'POST',
       headers: {
         'Content-type' : 'Application/json'
       },
@@ -73,4 +73,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn
