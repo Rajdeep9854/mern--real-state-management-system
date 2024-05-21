@@ -32,12 +32,11 @@ const userSlice = createSlice({
             state.loading = true;
         },
         updateUserSuccess: (state, action) => {
-            console.log(action.payload);
+            //console.log(action.payload);
             state.currentUser = action.payload;
-            console.log(state.currentUser);
+            //console.log(state.currentUser);
             state.loading = false;
-            
-            //state.error = null;
+            state.error = null;
         },
         updateUserFailure: (state, action) => {
             state.error = action.payload;
